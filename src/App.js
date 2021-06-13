@@ -23,7 +23,7 @@ export class Main extends Component {
   getData = async (event) => {
     try {
       event.preventDefault();
-      const axiosRespond = await axios.get(`https://us1.locationiq.com/v1/search.php?key=pk.83c86caa48f11d093c8138a3a3fc4185&city=${this.state.cityName}&format=json`);
+      const axiosRespond = await axios.get(`https://us1.locationiq.com/v1/search.php?key=pk.772c13421f7724e653c39b528cc1fb54city=${this.state.cityName}&format=json`);
       this.setState({
         cityData: axiosRespond.data[0],
         display: true,

@@ -92,7 +92,6 @@ my web was deployed in Netlify and it's online in this URl
 ## Credit and Collaborations
 ibrahim alhamshari,latifa ghasaan
 
-
 Name of feature: Get location
 
 Estimate of time needed to complete: 4 hours.
