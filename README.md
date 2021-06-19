@@ -72,27 +72,24 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 # Project Name
 
-**Author**: Your Name Goes Here
-**Version**: 1.0.0 (increment the patch/fix version number if you make more commits past your first submission)
+**Author**: Abdullah Alabbadi
 
+**Version**: 3.0.0
 ## Overview
-_a website that the user can enter information about city he or she want and their latitude and longitude._
-
+_a website that the user can enter information about city he or she want and their latitude and longitude. and the moves fo all city_
 ## Getting Started
 _by having the link_
 
 ## Architecture
-GitHub,Netlify,React bootstrap and Terminal also, locationQ.
+GitHub,Netlify,React bootstrap and Terminal also, locationQ, herouk .
 
 ## Change Log
-my web was deployed in Netlify and it's online in this URl
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
+my web was deployed in Netlify and herouk and it's online now.
 
 ## Credit and Collaborations
 ibrahim alhamshari,latifa ghasaan
 
-Name of feature: Get location
+Name of feature: Get location, Movies.
 
 Estimate of time needed to complete: 4 hours.
 
