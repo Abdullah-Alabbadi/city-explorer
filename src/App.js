@@ -27,6 +27,7 @@ export class Main extends Component {
     this.setState({
       cityName: event.target.value
     })
+    console.log(this.state.cityName);
   }
   getData = async (event) => {
     try {
@@ -36,23 +37,22 @@ export class Main extends Component {
         this.setState({
           lat: responseVonAxios.data[0].lat,
           lon: responseVonAxios.data[0].lon,
-
         });
-
+console.log(this.state.lon, this.state.lat);
       });
 
-      await axios.get(`http://localhost:8080/weather-data?lat=${this.state.lat}&lon=${this.state.lon}`).then(object => {
-        // console.log(object);
+      await axios.get(`http://localhost:8080/weather?lat=${this.state.lat}&lon=${this.state.lon}`).then(object => {
+        console.log(object);
         this.setState({
           date: object.data[0].date,
           description: object.data[0].description,
           display: true,
           cityData: object.data,
         })
-        // console.log(this.state.cityData);
+        console.log(this.state.cityData);
       })
 
-      await axios.get(`http://localhost:8080/movies?&city=${this.state.cityName}`).then(object => {
+      await axios.get(`http://localhost:8080/movies?city=${this.state.cityName}`).then(object => {
         console.log(object);
         this.setState({
           movieData: object.data,
@@ -79,7 +79,7 @@ export class Main extends Component {
               Explore
             </Button>
           </Form>
-          {this.state.notvalidCityName && <p>plz enter a valid city name </p>}
+          {this.state.notvalidCityName && <p>please check city name </p>}
           {this.state.display &&
             <div>
               <p className="city1">{this.state.cityData.display_name}</p>
