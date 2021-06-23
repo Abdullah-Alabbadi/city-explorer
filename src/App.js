@@ -5,6 +5,8 @@ import Footer from "./components/Footer";
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
 import { description } from 'commander';
+require('dotenv').config();
+const REACT_APP_URL = process.env.REACT_APP_URL;
 export class Main extends Component {
   constructor(props) {
     super(props);
@@ -24,6 +26,7 @@ export class Main extends Component {
   }//end constructor
   setCityname = (event) => {
     event.preventDefault()
+    console.log(event.target.value);
     this.setState({
       cityName: event.target.value
     })
@@ -41,7 +44,7 @@ export class Main extends Component {
 console.log(this.state.lon, this.state.lat);
       });
 
-      await axios.get(`http://localhost:8080/weather?lat=${this.state.lat}&lon=${this.state.lon}`).then(object => {
+      await axios.get(`${REACT_APP_URL}/weather?lat=${this.state.lat}&lon=${this.state.lon}`).then(object => {
         console.log(object);
         this.setState({
           date: object.data[0].date,
@@ -52,7 +55,7 @@ console.log(this.state.lon, this.state.lat);
         console.log(this.state.cityData);
       })
 
-      await axios.get(`http://localhost:8080/movies?city=${this.state.cityName}`).then(object => {
+       axios.get(`${REACT_APP_URL}/movies?city=${this.state.cityName}`).then(object => {
         console.log(object);
         this.setState({
           movieData: object.data,
